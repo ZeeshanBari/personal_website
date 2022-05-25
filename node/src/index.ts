@@ -1,17 +1,20 @@
-require('dotenv').config();
-const express = require('express')
+import dotenv from 'dotenv';
+import path from 'path';                               // for referencing the file system
+import express from 'express';
+import type { Request, Response } from 'express';
 
-const app = express()
+dotenv.config();
 const port = process.env.PORT || 3000;
-const path = require('path');                               // for referencing the file system
+const app = express()
 
 // set up static asset directories 
 app.use(express.static(path.resolve(__dirname, '..', '..', './angular/dist/angular')));
 
-app.get('/', (req: any, res: any) => {
-	res.sendFile(express.static(path.resolve(__dirname, '..', '..', './angular/dist/angular/index.html')))
+app.get('/', async (req: Request, res: Response) => {
+	return res.send(express.static(path.resolve(__dirname, '..', '..', './angular/dist/angular/index.html')));
 });
 
 app.listen(port, () => {
-	console.log(`App listening on port ${port}`)
+	// eslint-disable-next-line no-console
+	console.log(`App listening on port ${port}`);
 });
