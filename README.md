@@ -1,15 +1,11 @@
 # Personal Website
 
-## Node 
+```bash
+docker build -t zeeshanbari/personal_website:1.0
 ```
-npm run start:dev
+
+```bash
+docker run -p 8080:3000 zeeshanbari/personal_website:1.0
 ```
-Starts the application in development using nodemon and ts-node to do cold reloading
-```
-npm run build
-```
-Builds the app at build, cleaning the folder first
-```
-npm run start
-``` 
-Starts the app in production by first building the project with ```npm run build```, and then executing the compiled JavaScript ```dist/index.js```
+
+open localhost:8080 for project
