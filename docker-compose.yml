@@ -1,0 +1,9 @@
+version: '1'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - C:\Users\Zeeshan\Documents\Github\personal_website\angular:/angular
+      - C:\Users\Zeeshan\Documents\Github\personal_website\node:/node
